@@ -1,0 +1,34 @@
+{
+  "name": "nest-mongoose",
+  "version": "1.0.0",
+  "description": "NestJS Framework extension for easily injecting mongoose models into components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianBiermann/nest-mongoose.git"
+  },
+  "keywords": [
+    "Nest",
+    "NestJS",
+    "Mongoose",
+    "IoC",
+    "Injection",
+    "Model",
+    "Components"
+  ],
+  "author": "Julian Biermann <julian.bier89@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JulianBiermann/nest-mongoose/issues"
+  },
+  "homepage": "https://github.com/JulianBiermann/nest-mongoose#readme",
+  "dependencies": {
+    "mongoose": "^4.11.11"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^4.7.21"
+  }
+}
