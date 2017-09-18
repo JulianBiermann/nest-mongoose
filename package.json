@@ -2,9 +2,11 @@
   "name": "nest-mongoose",
   "version": "1.0.0",
   "description": "NestJS Framework extension for easily injecting mongoose models into components",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm install && tsc"
   },
   "repository": {
     "type": "git",
