@@ -44,23 +44,21 @@ export interface UserDocument extends Document {
 ```
 **Figure 1.0: Document interface (user-document.ts)**
 
-The next step is to define our schema and give a name to our mongoose model.
+The next step is to define our schema and name our mongoose model by calling the super constructor.
+
 **nest-mongoose** offers an abstract class which minifies the effort to create your model(Figure **1.1**).
 
-We override the `defineSchema` method which must return a mongoose schema. There we define our mongodb schema.
-
-In the constructor we call the `super(name)` constructor and apply our model name used by the `mongoose` `model(name, schema)` function. 
+We override the `defineSchema` method which must return our mongodb schema.
 
 ```typescript
 import {Component} from '@nestjs/common';
 import {Schema, Types} from 'mongoose';
+import {NestMongooseModel} from 'nest-mongoose';
 
-import {NestMongooseModel} from 'lib/nest-mongoose';
-
-import {ExampleDocument} from './example-document';
+import {UserDocument} from './user-document';
 
 @Component()
-export class UserModel extends NestMongooseModel<ExampleDocument> {
+export class UserModel extends NestMongooseModel<UserDocument> {
 
   constructor() {
     super('user');
@@ -83,7 +81,7 @@ export class UserModel extends NestMongooseModel<ExampleDocument> {
 ```
 **Figure 1.1: Model class (user-model.ts)**
 
-Afterwards we configure our model in themodule file (Figure **1.2**).
+Afterwards we configure our model in the module file (Figure **1.2**).
 
 ```typescript
 import {Module} from '@nestjs/common';
@@ -99,7 +97,7 @@ export class ExampleModule {}
 ```
 **Figure 1.2: Module configuration**
 
-Now we can inject the model into components and use the inner mongoose model to query and write data (Figure **1.3**).
+Now we can inject the model into components and use the inner mongoose model to query and write data via mongoose (Figure **1.3**).
 
 ```typescript
 import {Component, Inject} from '@nestjs/common';
