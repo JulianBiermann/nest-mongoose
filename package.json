@@ -19,7 +19,10 @@
     "IoC",
     "Injection",
     "Model",
-    "Components"
+    "Components",
+    "MongoDB",
+    "Mongo",
+    "Typescript"
   ],
   "author": "Julian Biermann <julian.bier89@gmail.com>",
   "license": "MIT",
