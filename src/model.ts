@@ -1,6 +1,4 @@
-import * as mongoose from 'mongoose';
-
-import {Document, Model, Schema} from 'mongoose';
+import { Connection, connection, Document, Model, Schema } from 'mongoose';
 
 /**
  * Wrapper around a T typed mongoose model.
@@ -13,6 +11,8 @@ import {Document, Model, Schema} from 'mongoose';
  * @template T Specific type which must be a mongoose Document type.
  */
 export abstract class NestMongooseModel<T extends Document> {
+
+  public static connection: Connection = connection;
 
   public readonly mongooseModel: Model<T>;
 
@@ -28,7 +28,7 @@ export abstract class NestMongooseModel<T extends Document> {
 
   private createModel(modelName: string): Model<T> {
     const schema: Schema = this.defineSchema();
-    const model: Model<T> = mongoose.connection.model(modelName, schema);
+    const model: Model<T> = NestMongooseModel.connection.model(modelName, schema);
 
     return model;
   }
