@@ -1,12 +1,11 @@
 {
   "name": "nest-mongoose",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "NestJS Framework extension for easily injecting mongoose models into components",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm install && tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,10 @@
     "IoC",
     "Injection",
     "Model",
-    "Components"
+    "Components",
+    "MongoDB",
+    "Mongo",
+    "Typescript"
   ],
   "author": "Julian Biermann <julian.bier89@gmail.com>",
   "license": "MIT",
