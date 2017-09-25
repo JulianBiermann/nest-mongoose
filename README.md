@@ -130,6 +130,21 @@ export class UserMongoRepository implements UserRepository {
 ```
 **Figure 1.3: Repository component**
 
+At last we need to assign a mongoose connection to our model. This happens by assigning it to the
+static property `connection`. This step should be done when the mongoose connection has been established.
+
+```typescript
+mongoose.connection.once('open', async() => {
+  NestMongooseModel.connection = mongoose.connection;
+
+  const listenPort: number = 4000;
+
+  const app: INestApplication = await NestFactory.create(ApplicationModule);
+
+  await app.listen(listenPort);
+});
+```
+
 ## Related projects
 
 - [mongoose](http://mongoosejs.com/)

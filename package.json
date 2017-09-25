@@ -1,6 +1,6 @@
 {
   "name": "nest-mongoose",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NestJS Framework extension for easily injecting mongoose models into components",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
